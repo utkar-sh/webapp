@@ -1,0 +1,14 @@
+[Unit]
+Description=CSYE-6225 Application
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/webapp/main.py
+StandardInput=tty-force
+StandardOutput=file:/usr/webapp/logs/main.log
+StandardError=file:/usr/webapp/logs/main.log
+
+[Install]
+WantedBy=multi-user.target
